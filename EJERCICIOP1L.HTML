@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIOPRIMERPARCIAL</title>
+    <style>
+        .container_cards {
+            background-color: rgb(248, 192, 72);
+            height: 800px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-evenly;
+            padding: 10px 0;
+            align-items: center;
+        }
+
+        .cards {
+            width: 30%;
+            height: 100px;
+            background-color: beige;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            margin-bottom: 10%;
+        }
+
+        .cards_img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .cards_img:hover {
+            box-shadow: 0px 0px 10px 1px black;
+            transform: scale(1.1);
+            transition: all ease-in-out .8s;
+            cursor: pointer;
+        }
+
+        .text_card {
+            margin-left: 10px;
+        }
+
+        h2{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.3rem;
+        }
+
+        span{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 0.7rem;  
+        }
+
+        h2{
+            margin-bottom: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>EJERCICIO PRIMER PARCIAL</h1>
+    </div>
+    <div id="container_cards">
+        <div class="cards">
+            <img class="cards_img" src="/img/foto.jpg" alt="foto perfil">
+            <div class="text_card">
+                <h2>Keila Nathaly Vacca Bacca</h2>
+                <span>Ingeniera de sistemas, estudiante de la UFPSO</span>
+            </div>
+        </div>
+        <div class="cards"> <img class="cards_img" src="/img/foto.jpg" alt="foto perfil">
+            <div class="text_card">
+                <h2>Keila Nathaly Vacca Bacca</h2>
+                <span>Ingeniera de sistemas, estudiante de la UFPSO</span>
+            </div>
+        </div>
+        <div class="cards"> <img class="cards_img" src="/img/foto.jpg" alt="foto perfil">
+            <div class="text_card">
+                <h2>Keila Nathaly Vacca Bacca</h2>
+                <span>Ingeniera de sistemas, estudiante de la UFPSO</span>
+            </div>
+        </div>
+        <div class="cards"> <img class="cards_img" src="/img/foto.jpg" alt="foto perfil">
+            <div class="text_card">
+                <h2>Keila Nathaly Vacca Bacca</h2>
+                <span>Ingeniera de sistemas, estudiante de la UFPSO</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

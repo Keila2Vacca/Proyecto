@@ -41,27 +41,34 @@ img {
     border-radius: 50%;
 }
 
-.menú_desple{
-display: flex;
-justify-content: center;
-background-color: rgba(199, 82, 150, 0.768);
+.logo-img:hover{
+    box-shadow: 0px 0px 10px 1px white;
+    transform: scale(1.1);
+    transition: all ease-in-out 0.8s;
 }
 
-li ul{
+.menú_desple {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+li ul {
     display: none;
 }
 
-.menú_desple li a{
+.menú_desple li a {
     padding: 2rem 7rem;
     display: block;
     background-color: rgba(199, 82, 150, 0.768);
+    margin-bottom: 2rem;
 }
 
-.desplegar:hover .sub_me_desple{
-  display: block;   
+.desplegar:hover .sub_me_desple {
+    display: block;
 }
 
-.sub_me_desple{
+.sub_me_desple {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-size: 3rem;
@@ -69,16 +76,16 @@ li ul{
     text-transform: uppercase;
 }
 
-nav li ul{
+nav li ul {
     position: absolute;
     padding: 0;
 }
 
-li ul li{
+li ul li {
     background-color: rgba(199, 82, 150, 0.768);
 }
 
-li ul li:hover{
+li ul li:hover {
     color: black;
 }
 
@@ -93,6 +100,10 @@ nav a {
 
 nav a:hover {
     color: black;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 1px white;
+    transform: scale(1.1);
+    transition: all ease-in-out 0.8s;
 }
 
 .activa {
@@ -121,10 +132,6 @@ nav a:hover {
     background-color: rgba(199, 82, 150, 0.768);
 }
 
-.producto:hover {
-    background-color: rgb(77, 7, 56);
-}
-
 .producto-blanco {
     display: flex;
     align-items: center;
@@ -133,6 +140,29 @@ nav a:hover {
     height: 25rem;
     object-fit: contain;
     padding: 1rem;
+}
+
+.producto-informacion button {
+    margin: 0 auto;
+    display: block;
+    background-color: rgb(250, 198, 230);
+    width: 110px;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.producto-informacion button:hover {
+    background-color: rgb(77, 7, 56);
+    box-shadow: 0px 0px 10px 1px white;
+    transform: scale(1.1);
+    transition: all ease-in-out 0.8s;
+    color: white;
 }
 
 .producto-precio,
@@ -154,46 +184,58 @@ nav a:hover {
     font-weight: 800;
 }
 
-@media (min-width:320px){
-    .productos{
-        grid-template-columns: repeat(2,1fr);
+@media (min-width:320px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
     }
+
     .producto-nombre {
         font-size: 1.6rem;
         font-weight: 800;
     }
+
     .producto-precio {
         font-size: 1.3rem;
         font-weight: 500;
     }
-    }
+}
 
 
-@media (min-width:768px){
-    .productos{
-        grid-template-columns: repeat(3,1fr);
+@media (min-width:768px) {
+    .productos {
+        grid-template-columns: repeat(3, 1fr);
     }
+
     .producto-nombre {
         font-size: 2rem;
         font-weight: 800;
     }
+
     .producto-precio {
         font-size: 1.8rem;
         font-weight: 500;
     }
+}
+
+@media (min-width:1280px) {
+    .productos {
+        grid-template-columns: repeat(4, 1fr);
     }
 
-@media (min-width:1280px){
-    .productos{
-        grid-template-columns: repeat(4,1fr);
-    }
-    
 }
 
 .formulario {
     width: min(60rem, 100%);
     margin: 0 auto;
     padding: 1rem;
+}
+
+.boton:hover{
+    background-color: rgb(77, 7, 56);
+    box-shadow: 0px 0px 10px 1px white;
+    transform: scale(1.1);
+    transition: all ease-in-out 0.8s;
+    color: white;
 }
 
 .campo {
@@ -236,7 +278,7 @@ label {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-input{
+input {
     background-color: rgba(199, 82, 150, 0.768);
     margin-top: 3rem;
     color: white;

@@ -1,6 +1,8 @@
-html {
+* {
     box-sizing: border-box;
     font-size: 60.5%;
+    margin: 0;
+    padding: 0;
 }
 
 *,
@@ -25,6 +27,25 @@ img {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.scroll{
+    background-color: white;
+    box-shadow: 0.1rem 0.2rem 0.3rem #000;
+}
+
+.scroll img{
+    filter: invert(15%);
+}
+
+.scroll h1{
+    color: #000;
+}
+
+.carrito{
+    filter: invert(100%);
+    width: 45px;
+    height: auto;
+}
+
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
@@ -33,6 +54,21 @@ img {
 .header {
     display: flex;
     justify-content: center;
+}
+
+.headerc{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4%;
+    height: 80px;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    color: white;
 }
 
 .logo-img {
@@ -71,9 +107,10 @@ li ul {
 .sub_me_desple {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
     text-transform: uppercase;
+    text-align: center;
 }
 
 nav li ul {
@@ -89,10 +126,9 @@ li ul li:hover {
     color: black;
 }
 
-
 nav a {
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 3rem;
     color: white;
     text-transform: uppercase;

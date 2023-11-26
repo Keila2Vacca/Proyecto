@@ -10,16 +10,57 @@
 </head>
 
 <body>
-    <script src="/JS/interactividad.js"></script>
+    <script>
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("headerc").style.filter = "invert(100%)";
+            } else {
+                document.getElementById("headerc").style.filter = "none";
+                document.getElementById("headerc").style.backgroundColor = "#fff";
+            }
+        }
+
+
+        const inputQuantity = document.querySelector('.input-quantity');
+        const btnIncrement = document.querySelector('#increment');
+        const btnDecrement = document.querySelector('#decrement');
+
+        let valueByDefault = parseInt(inputQuantity.value);
+
+
+        btnIncrement, addEventListener('click', () => {
+            valueByDefault += 1;
+            inputQuantity.value = valueByDefault;
+        })
+
+        btnDecrement, addEventListener('click', () => {
+            if (valueByDefault === 1) {
+                return;
+            }
+            valueByDefault -= 1;
+            inputQuantity.value = valueByDefault;
+        })
+       
+        function addCart () {
+            setTimeout(function () {
+                alert("w");
+            },1000); 
+        }
+
+    </script>
+
     <div class="img-fondo">
         <div class="velo-negro">
-            <header class="headerc">
+            <header id="headerc">
                 <h1>Shopping car</h1>
-                 <img src="/img/carrito.png" alt="carrito de compras" class="carrito">
+                <img src="/img/carrito.png" alt="carrito de compras" class="carrito">
             </header>
 
             <main class="contenedor">
-                
+
                 <div class="productos">
 
 
@@ -34,8 +75,37 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bulsa campesina rosa</p>
                             <p class="producto-precio">$40.000</p>
-
-                            <a href="/html/carrito.html"><button>comprar</button></a>
+                            <div class="form-group">
+                                <label for="">Talla</label>
+                                <select name="size" id="size">
+                                    <option disabled selected value="">Escoge una opción</option>
+                                    <option value="XS">XS</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                    <option value="XXL">XXL</option>
+                                </select>
+                            </div>
+                            <div class="container-add-cart">
+                                <div class="container-quantity">
+                                    <p>Cantidad</p>
+                                    <input type="number" placeholder="1" value="1" min="1" class="input-quantity" />
+                                    <div class="btn-increment-decrement">
+                                        <i class="fa-solidfa-chevron-up"></i>
+                                        <i class="fa-solidfa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                <div onclick="addCart">
+                                    <button id="btn-add-to-cart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+                                        </svg>
+                                        Añadir al carrito
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -53,7 +123,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">vestido blanco en satín</p>
                             <p class="producto-precio">$50.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
                     </div>
 
@@ -69,7 +139,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">jean gris bota recta</p>
                             <p class="producto-precio">$70.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -86,7 +156,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">jean con bolsillos</p>
                             <p class="producto-precio">$68.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -102,7 +172,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bulsa de tirantes con cierre en medio</p>
                             <p class="producto-precio">$30.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -119,7 +189,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bulsa velo negra con tirantes</p>
                             <p class="producto-precio">$20.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -137,7 +207,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto de brasier rosa</p>
                             <p class="producto-precio">$50.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -154,7 +224,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">brasier crema con borde de encaje</p>
                             <p class="producto-precio">$45.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -171,7 +241,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">top de lencería encaje negro</p>
                             <p class="producto-precio">$35.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -188,7 +258,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto lencería de encaje rojo</p>
                             <p class="producto-precio">$60.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -205,7 +275,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto de encaje negro</p>
                             <p class="producto-precio">$50.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -222,7 +292,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto de encaje morado</p>
                             <p class="producto-precio">$55.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -238,7 +308,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bulsa de pepitas con escote profundo</p>
                             <p class="producto-precio">$30.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -255,7 +325,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">falda jean</p>
                             <p class="producto-precio">$30.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -272,7 +342,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto crop top y short amarillo</p>
                             <p class="producto-precio">$70.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -289,7 +359,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto crop top y short gris</p>
                             <p class="producto-precio">$80.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -307,7 +377,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bulsa blanca medio beso + short suelto color mostaza</p>
                             <p class="producto-precio">$75.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -322,7 +392,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto deportivo en short</p>
                             <p class="producto-precio">$60.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -339,7 +409,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">tenis nude sin cordón</p>
                             <p class="producto-precio">$80.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -356,7 +426,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">sandalias con piedrería</p>
                             <p class="producto-precio">$40.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -374,7 +444,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">sandalias de plataforma negras</p>
                             <p class="producto-precio">$70.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -391,7 +461,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">botines de tacón blanco sin cordones</p>
                             <p class="producto-precio">$90.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -408,7 +478,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">botines blancos de tacón punta</p>
                             <p class="producto-precio">$90.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -425,7 +495,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">sandalias blancas entrelazadas</p>
                             <p class="producto-precio">$46.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -442,7 +512,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bolsa hombrera azul</p>
                             <p class="producto-precio">$60.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -459,7 +529,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bolsa rosa con flores bordadas</p>
                             <p class="producto-precio">$40.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -476,7 +546,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">morral combinado con broche de abeja</p>
                             <p class="producto-precio">$64.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -493,7 +563,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">morral negro</p>
                             <p class="producto-precio">$70.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -510,7 +580,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">combo cartera+bolsa verde</p>
                             <p class="producto-precio">$75.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -527,7 +597,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bolsa morada de correa</p>
                             <p class="producto-precio">$60.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -544,7 +614,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">tanga rosa sin costuras</p>
                             <p class="producto-precio">$25.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -561,7 +631,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">set x3 de encaje marrón</p>
                             <p class="producto-precio">$60.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -578,7 +648,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto negro sin tiras</p>
                             <p class="producto-precio">$40.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -596,7 +666,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto negro con borde blanco</p>
                             <p class="producto-precio">$40.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -613,7 +683,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto de tanga azul cielo</p>
                             <p class="producto-precio">$45.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -630,7 +700,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">conjunto de tanga blanco</p>
                             <p class="producto-precio">$40.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -647,7 +717,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">tacón de tiras blanco</p>
                             <p class="producto-precio">$70.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -664,7 +734,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">tacón de tiras rosa</p>
                             <p class="producto-precio">$70.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -681,7 +751,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">botines negro de tacón</p>
                             <p class="producto-precio">$90.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -698,7 +768,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">botines de tacón blanco</p>
                             <p class="producto-precio">$90.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -716,7 +786,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">tenis combinados en bota</p>
                             <p class="producto-precio">$86.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -733,7 +803,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">tenis blanco en bota</p>
                             <p class="producto-precio">$86.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -750,7 +820,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bolsa blanca con cadenas</p>
                             <p class="producto-precio">$55.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -767,7 +837,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">cartera estampada de besos</p>
                             <p class="producto-precio">$40.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -784,7 +854,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bolsa en forma de corazón de pelaje</p>
                             <p class="producto-precio">$50.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -801,7 +871,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bolsa de correa palo rosa</p>
                             <p class="producto-precio">$50.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -818,7 +888,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bolsa en forma de gato</p>
                             <p class="producto-precio">$53.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -835,7 +905,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">bolsa combinada blanco-marrón</p>
                             <p class="producto-precio">$55.000</p>
-                            <a href="/html/carrito.html"></a><button>comprar</button></a>
+
                         </div>
 
                     </div>
@@ -847,7 +917,7 @@
 
     </div>
 
-   
+
     <footer class="footer">
         <a class="enlace-footer" href="https://web.facebook.com/?locale=es_LA&_rdc=1&_rdr" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 226 226"
@@ -885,7 +955,7 @@
         <p>Copyright© 2023-Todos los derechos reservados Páguina de ventas</p>
     </footer>
 
-    
+
 </body>
 
 </html>

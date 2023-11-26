@@ -27,21 +27,8 @@ img {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.scroll{
-    background-color: white;
-    box-shadow: 0.1rem 0.2rem 0.3rem #000;
-}
-
-.scroll img{
-    filter: invert(15%);
-}
-
-.scroll h1{
-    color: #000;
-}
-
 .carrito{
-    filter: invert(100%);
+    filter: none;
     width: 45px;
     height: auto;
 }
@@ -56,7 +43,7 @@ img {
     justify-content: center;
 }
 
-.headerc{
+#headerc{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 7rem;
     text-transform: uppercase;
@@ -68,7 +55,7 @@ img {
     top: 0;
     position: fixed;
     width: 100%;
-    color: white;
+    color: #000;
 }
 
 .logo-img {
@@ -182,7 +169,7 @@ nav a:hover {
     margin: 0 auto;
     display: block;
     background-color: rgb(250, 198, 230);
-    width: 110px;
+    width: 170px;
     height: 25px;
     border-radius: 10px;
     border: none;
@@ -191,6 +178,7 @@ nav a:hover {
     cursor: pointer;
     text-transform: uppercase;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
 }
 
 .producto-informacion button:hover {
